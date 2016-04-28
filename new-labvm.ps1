@@ -6,12 +6,17 @@ param(
     Valuefrompipeline=$True,
     Valuefrompipelinebypropertyname=$true
     )]
-    [string[]]$VMName
+    [string[]]$VMName,
+    [Parameter(Mandatory=$false,
+    Valuefrompipeline=$true,
+    Valuefrompipelinebypropertyname=$true
+    )]
+    [string[]]$Sourcepath="E:\vms\Differentialclient\Differntialclient\Virtual Hard Disks\differentialclient.vhdx"
     )
 
 BEGIN{
-$SourcePath="E:\ProgramData\Microsoft\Windows\Hyper-V\Differentialclient\Differntialclient\Virtual Hard Disks\Differntialclient.vhdx"
 }
+
 PROCESS{
     foreach($VM in $VMName)
     {
